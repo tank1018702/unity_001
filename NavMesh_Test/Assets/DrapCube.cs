@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DrapCube : MonoBehaviour {
+public class DrapCube : MonoBehaviour
+{
 
- public   GameObject TargetCube;
+    public GameObject TargetCube;
+
+    public GameObject MainCamera;
     Vector2 LastScreenMousePos;
     Vector2 CurrentMousePos;
     public float rotatespeed;
     float xDeg;
     float yDeg;
-   public float xSpeed;
-   public float ySpeed;
+    public float xSpeed;
+    public float ySpeed;
 
     Vector3 MousePosition_start;
     Vector3 MousePosition_end;
 
     NavMeshSurface[] surfacelist;
-	
-	void Start ()
+
+
+
+    void Start()
     {
         surfacelist = TargetCube.transform.GetComponentsInChildren<NavMeshSurface>();
     }
-	
+
     void SurfacesControl(bool tirgger)
     {
 
@@ -33,24 +38,17 @@ public class DrapCube : MonoBehaviour {
         }
     }
 
-	
-	void Update ()
+
+    void Update()
     {
         MousePosition_start = Input.mousePosition;
 
-        if(Input.GetMouseButtonDown(1))
-        {
-            SurfacesControl(false);
-        }
-        if(Input.GetMouseButtonUp(1))
-        {
-            SurfacesControl(true);
-        }
+      
         if (Input.GetKey(KeyCode.Mouse1))
         {
 
-            Vector3 MouseDirction = (MousePosition_end - MousePosition_start).normalized;       
-            TargetCube.transform.RotateAround(TargetCube.transform.position, Vector3.Cross(transform.forward, MouseDirction), rotatespeed * (MousePosition_end - MousePosition_start).sqrMagnitude * Time.deltaTime);
+            Vector3 MouseDirction = (MousePosition_end - MousePosition_start).normalized;
+            MainCamera.transform.RotateAround(TargetCube.transform.position, Vector3.Cross(-transform.forward, MouseDirction), rotatespeed  * Time.deltaTime);
             MousePosition_end = MousePosition_start;
 
             //TargetCube.transform.RotateAround(TargetCube.transform.position,Vector3.forward, 180 * Time.deltaTime);
@@ -74,9 +72,9 @@ public class DrapCube : MonoBehaviour {
         {
             MousePosition_end = Input.mousePosition;
         }
-        
-	}
 
-    
+    }
+
+
 
 }
