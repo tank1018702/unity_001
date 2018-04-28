@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Sence/cube.unity
+  isLoaded: 1
+  isActive: 1
