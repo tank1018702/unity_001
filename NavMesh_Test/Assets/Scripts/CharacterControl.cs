@@ -27,7 +27,7 @@ public class CharacterControl : MonoBehaviour
         //_agent.CalculatePath()
         //RayCast_Test();
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _agent.Warp(temppoint.transform.position);
         }

@@ -8,6 +8,8 @@ public class Incubator : MonoBehaviour
 
     public GameObject Target;
 
+    public float BornTime;
+
     Vector3 BornPoint;
 	
 	void Start ()
@@ -25,7 +27,7 @@ public class Incubator : MonoBehaviour
            GameObject go= Instantiate(Agent, BornPoint, Quaternion.identity);
             go.GetComponent<CharacterAuto>().SetTarget(Target.transform.position);
             
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(BornTime);
         }
     }		
 }

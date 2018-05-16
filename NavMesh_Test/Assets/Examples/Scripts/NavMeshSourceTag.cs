@@ -63,7 +63,7 @@ public class NavMeshSourceTag : MonoBehaviour
                 s.area = mf.transform.GetComponent<NavMeshModifier>().area;
             }
             else
-            {
+            {                                                                             
                 s.area = 0;
             }
             sources.Add(s);

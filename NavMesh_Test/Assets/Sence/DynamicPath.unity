@@ -3005,6 +3005,11 @@ Prefab:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1396240839}
+    - target: {fileID: 114891529069878284, guid: adb02d54cfc504546bb6c133b5f4a0cd,
+        type: 2}
+      propertyPath: BornTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb02d54cfc504546bb6c133b5f4a0cd, type: 2}
   m_IsPrefabParent: 0
@@ -19748,6 +19753,11 @@ Prefab:
     - target: {fileID: 1175700804771104, guid: adb02d54cfc504546bb6c133b5f4a0cd, type: 2}
       propertyPath: m_Name
       value: Incubator1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114891529069878284, guid: adb02d54cfc504546bb6c133b5f4a0cd,
+        type: 2}
+      propertyPath: BornTime
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb02d54cfc504546bb6c133b5f4a0cd, type: 2}
