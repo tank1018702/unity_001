@@ -58,14 +58,9 @@ public class NavMeshSourceTag : MonoBehaviour
             s.shape = NavMeshBuildSourceShape.Mesh;
             s.sourceObject = m;
             s.transform = mf.transform.localToWorldMatrix;
-            if (mf.transform.GetComponent<NavMeshModifier>())
-            {
-                s.area = mf.transform.GetComponent<NavMeshModifier>().area;
-            }
-            else
-            {                                                                             
-                s.area = 0;
-            }
+            //修改此处s.area的赋值
+            s.area = mf.transform.GetComponent<NavMeshModifier>() ?
+                mf.transform.GetComponent<NavMeshModifier>().area : 0;
             sources.Add(s);
         }
 

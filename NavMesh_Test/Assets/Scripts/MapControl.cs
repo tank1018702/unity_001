@@ -7,6 +7,8 @@ public class MapControl : MonoBehaviour
 {
     NavMeshModifier[,] _modifiers;
     NavMeshModifier[] modifierlist;
+
+    //public NavMeshSurface surface;
    
 
 
@@ -23,6 +25,8 @@ public class MapControl : MonoBehaviour
                 _modifiers[i, j] = modifierlist[i * 10 + j];
             }
         }
+        PathInit();
+        //surface.BuildNavMesh();
     }
     void Update()
     {
@@ -48,6 +52,7 @@ public class MapControl : MonoBehaviour
         {
             DirectionChoice(i, ref r);
         }
+        //surface.BuildNavMesh();
     }
 
     void DirectionChoice(int rows, ref int columns)
