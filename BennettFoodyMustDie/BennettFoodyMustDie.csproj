@@ -241,6 +241,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Free Asset - 2D Handcrafted Art\Scripts\CamerController.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\Controller2d.cs" />
     <Compile Include="Assets\Scripts\FinalController.cs" />
@@ -249,6 +250,11 @@
     <Compile Include="Assets\Scripts\text\Beefcake.cs" />
     <Compile Include="Assets\Scripts\text\CollisionDetection.cs" />
     <Compile Include="Assets\Scripts\Trigger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Free Asset - 2D Handcrafted Art\Readme.txt" />
+    <None Include="Assets\Free Asset - 2D Handcrafted Art\Shader\NormalMappedSprite-Animated.shader" />
+    <None Include="Assets\Free Asset - 2D Handcrafted Art\Shader\NormalMappedTileAnimated.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

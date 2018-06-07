@@ -42,8 +42,10 @@ public class Beefcake : MonoBehaviour
         //注意这里要让锤头的锚点与锤子本身的坐标的Z值相等,为了让旋转轴与世界坐标的Z轴平行,同理鼠标坐标的Z值也直接使用锤子的坐标的Z值
         hammer_rig.velocity = (new Vector3(MousePosition.x, MousePosition.y, hammer.transform.position.z) - hammer_anchor.position) * 10;
 
+
         if(hammer.GetComponent<CollisionDetection>().IsCollision)
         {
+            //BodyControl(hammer.GetComponent<CollisionDetection>().velocity);
             BodyControl(hammer_rig.velocity);
         }
 
@@ -83,7 +85,7 @@ public class Beefcake : MonoBehaviour
 
     void BodyControl(Vector3 velociy)
     {
-        body_rig.velocity = -velociy;
-   
+        body_rig.velocity = -velociy*0.5f;
+        //body_rig.AddForce(velociy * 2);
     }
 }

@@ -6,9 +6,17 @@ public class CollisionDetection : MonoBehaviour
 {
     public bool IsCollision=false;
 
+    public Vector3 velocity;
+
     private void OnCollisionEnter(Collision collision)
     {
+        velocity = collision.relativeVelocity;
         IsCollision = true;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        IsCollision = false;
     }
     private void OnCollisionExit(Collision collision)
     {
@@ -17,7 +25,7 @@ public class CollisionDetection : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(IsCollision);
+        
     }
 
 }
