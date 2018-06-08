@@ -247,8 +247,10 @@
     <Compile Include="Assets\Scripts\FinalController.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\TestController.cs" />
+    <Compile Include="Assets\Scripts\text\Arrow.cs" />
     <Compile Include="Assets\Scripts\text\Beefcake.cs" />
     <Compile Include="Assets\Scripts\text\CollisionDetection.cs" />
+    <Compile Include="Assets\Scripts\text\GameOver.cs" />
     <Compile Include="Assets\Scripts\Trigger.cs" />
   </ItemGroup>
   <ItemGroup>

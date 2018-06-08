@@ -6,7 +6,7 @@ public class Beefcake : MonoBehaviour
 {
     public GameObject body;
     public GameObject hammer;
-    
+
 
     Rigidbody body_rig;
     Rigidbody hammer_rig;
@@ -33,7 +33,7 @@ public class Beefcake : MonoBehaviour
         HammerControl();
     }
 
-    void HammerControl()
+     void HammerControl()
     {
         //获取鼠标在屏幕上的坐标并转换为世界坐标,若相对距离大于最大距离则获得转换后的坐标
         Vector2 MousePosition = GetConfinedPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -43,7 +43,7 @@ public class Beefcake : MonoBehaviour
         hammer_rig.velocity = (new Vector3(MousePosition.x, MousePosition.y, hammer.transform.position.z) - hammer_anchor.position) * 10;
 
 
-        if(hammer.GetComponent<CollisionDetection>().IsCollision)
+        if (hammer.GetComponent<CollisionDetection>().IsCollision)
         {
             //BodyControl(hammer.GetComponent<CollisionDetection>().velocity);
             BodyControl(hammer_rig.velocity);
@@ -56,7 +56,7 @@ public class Beefcake : MonoBehaviour
         hammer.transform.RotateAround(hammer_anchor.position, Vector3.Cross(hammer_anchor.up, direction), Vector3.Angle(hammer_anchor.up, direction));
     }
     //单独抽出一个函数获取最大距离以外的转换后的鼠标坐标
-    Vector2 GetConfinedPosition(Vector2 mouseposition)
+     Vector2 GetConfinedPosition(Vector2 mouseposition)
     {
 
         Vector2 Confined_MousePosition;
@@ -79,13 +79,13 @@ public class Beefcake : MonoBehaviour
         {
             //若相对距离小于最大距离那么鼠标当前坐标就是目标坐标
             Confined_MousePosition = mouseposition;
-        }     
+        }
         return Confined_MousePosition;
     }
 
-    void BodyControl(Vector3 velociy)
+     void BodyControl(Vector3 velociy)
     {
-        body_rig.velocity = -velociy*0.5f;
-        //body_rig.AddForce(velociy * 2);
+        body_rig.velocity = -velociy * 0.5f;
+        //body_rig.AddForce(velociy * 2,ForceMode.Impulse);
     }
 }
